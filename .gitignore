@@ -1,0 +1,4 @@
+#gitignore
+#ignoring config file
+
+/resources/config.php
