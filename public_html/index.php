@@ -3,7 +3,7 @@
   <title>PHP Test</title>
  </head>
  <body>
-    <form>
+    <form action="interfaces.php" method="post">
         IP address:<br>
         <input type="text" name="address"><br>
         
@@ -11,7 +11,7 @@
         <input type="text" name="username"><br>
 
         password: <br>
-        <input type="text" name="password"><br><br>
+        <input type="password" name="password"><br><br>
         
         <input type="submit" value="Submit">
     </form>
