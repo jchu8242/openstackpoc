@@ -4,11 +4,18 @@
              <body>
                 <?php
                  
-                    echo $_POST["address"];
-                    echo "<br><br>";
-                    echo $_POST["username"]; 
+                    $add=$_POST["address"];
+                    $user=$_POST["username"]; 
                     $pass=$_POST["password"];
 
+                    echo $user;
+
+                  ?>
+                   <br><br>
+
+                 <?php
+            
+                    echo $add;
                  ?>
             </body>
         </head>
