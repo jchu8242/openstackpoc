@@ -7,7 +7,7 @@
                     $add=$_POST["address"];
                     $user=$_POST["username"]; 
                     $pass=$_POST["password"];
-
+changes.
                     echo $user;
 
                   ?>
