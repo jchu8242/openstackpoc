@@ -10,6 +10,7 @@
 			<th> Network address </th>
 			<th> Device type </th>
 			<th> OpenStack port ID </th>
+			<th> Linux Device Name Prefix </th>
 			<th> Linux Device Name Suffix </th>
 		</tr>;
 
@@ -40,19 +41,34 @@
 
 		while ($row=mysqli_fetch_array($result)) {
 
-		$networkName=$row['name'];
-		$networkAddress=$row['cidr'];
-		$deviceType=$row['device_owner'];
-		$openstackPortId=$row['id'];
-		$LinuxDeviceNameSuffix=$row['LDN'];
+			//assigning variables to row values
+			$networkName=$row['name'];
+			$networkAddress=$row['cidr'];
+			$deviceType=$row['device_owner'];
+			$openstackPortId=$row['id'];
+			$LinuxDeviceNameSuffix=$row['LDN'];
 
-			echo "<tr>";
-			echo "<td>" . $networkName . "</td>";
-			echo "<td>" . $networkAddress . "</td>";
-			echo "<td>" . $deviceType . "</td>";
-			echo "<td>" . $openstackPortId . "</td>";
-			echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
-			echo "</tr>";
+			//validate Linux Device Prefix
+			function validatePrefix($deviceType) {
+				if ($deviceType == "compute:nova") {
+					echo "qvo, qvb. tap";
+				} elseif ($deviceType=="network:router_gateway") {
+					echo "qg";
+				} elseif ($deviceType=="network:router_interface") {
+					echo "qr";
+				} elseif ($deviceType=="network:dhcp") {
+					echo "tap";
+				}
+			}
+
+				echo "<tr>";
+				echo "<td>" . $networkName . "</td>";
+				echo "<td>" . $networkAddress . "</td>";
+				echo "<td>" . $deviceType . "</td>";
+				echo "<td>" . $openstackPortId . "</td>";
+				echo "<td>" . validatePrefix($deviceType) . "</td>"
+				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
+				echo "</tr>";
 		}
 		echo '</table>';
 
