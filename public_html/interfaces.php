@@ -37,7 +37,20 @@
 			ON subnets.network_id=ports.network_id 
 			WHERE device_owner IN ("compute:nova", "network:dhcp", "network:router_interface", "network:router_gateway")
 			ORDER BY ports.device_owner');
-		
+
+			//validate Linux Device Prefix
+			function validatePrefix($deviceType) {
+				if ($deviceType == "compute:nova") {
+					print ("qvo, qvb, tap");
+				} elseif ($deviceType=="network:router_gateway") {
+					print ("qg");
+				} elseif ($deviceType=="network:router_interface") {
+					print ("qr");
+				} elseif ($deviceType=="network:dhcp") {
+					print ("tap");
+				}
+			}
+
 
 		while ($row=mysqli_fetch_array($result)) {
 
@@ -56,18 +69,6 @@
 				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
 				echo "</tr>";
 
-			//validate Linux Device Prefix
-			function validatePrefix($deviceType) {
-				if ($deviceType == "compute:nova") {
-					print ("qvo, qvb, tap");
-				} elseif ($deviceType=="network:router_gateway") {
-					print ("qg");
-				} elseif ($deviceType=="network:router_interface") {
-					print ("qr");
-				} elseif ($deviceType=="network:dhcp") {
-					print ("tap");
-				}
-			}
 		}
 		echo '</table>';
 
