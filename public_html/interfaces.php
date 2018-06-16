@@ -42,7 +42,6 @@
 			function validatePrefix($deviceType) {
 
 				switch($deviceType) {
-					$prefix="";
 					case "compute:nova":
 						$prefix="qvo, qvb, tap";
 						return $prefix;
