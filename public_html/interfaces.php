@@ -61,12 +61,14 @@
 				}
 			}
 
+			$prefix=validatePrefix;
+
 				echo "<tr>";
 				echo "<td>" . $networkName . "</td>";
 				echo "<td>" . $networkAddress . "</td>";
 				echo "<td>" . $deviceType . "</td>";
 				echo "<td>" . $openstackPortId . "</td>";
-				echo "<td>" . validatePrefix($deviceType) . "</td>";
+				echo "<td>" . $prefix . "</td>";
 				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
 				echo "</tr>";
 		}
