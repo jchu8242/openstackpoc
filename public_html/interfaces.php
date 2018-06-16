@@ -34,7 +34,8 @@
 			<th> Network address <th>
 			<th> Device type <th>
 			<th> OpenStack port ID <th>
-			<th> Linux Device Name Suffix <th>';
+			<th> Linux Device Name Suffix <th>
+			</tr>';
 
 		while ($row = mysqli_fetch_array($result)) {
 			echo "<tr>";
