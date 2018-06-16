@@ -44,16 +44,16 @@
 				switch($deviceType) {
 					case "compute:nova":
 						$prefix = "qvo, qvb, tap";
-						continue;
+						break;
 					case "network:router_gateway":
 						$prefix = "qg";
-						continue;
+						break;
 					case "network:router_interface":
 						$prefix = "qr";
-						continue;
+						break;
 					case "network:dhcp":
 						$prefix = "tap";
-						continue;
+						break;
 				}
 
 			}
@@ -74,20 +74,19 @@
 				switch($deviceType) {
 					case "compute:nova":
 						echo "qvo, qvb, tap";
-						continue;
+						break;
 					case "network:router_gateway":
 						echo "qg";
-						continue;
+						break;
 					case "network:router_interface":
 						echo "qr";
-						continue;
+						break;
 					case "network:dhcp":
 						echo "tap";
-						continue;
+						break;
 				}
 
 			}
-			
 
 				echo "<tr>";
 				echo "<td>" . $networkName . "</td>";
