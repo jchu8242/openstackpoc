@@ -68,6 +68,26 @@
 			$openstackPortId=$row['id'];
 			$LinuxDeviceNameSuffix=$row['LDN'];
 			$prefix="";
+
+			//validate Linux Device Prefix
+			function validatePrefix($deviceType) {
+
+				switch($deviceType) {
+					case "compute:nova":
+						$prefix = "qvo, qvb, tap";
+						continue;
+					case "network:router_gateway":
+						$prefix = "qg";
+						continue;
+					case "network:router_interface":
+						$prefix = "qr";
+						continue;
+					case "network:dhcp":
+						$prefix = "tap";
+						continue;
+				}
+
+			}
 			
 
 				echo "<tr>";
