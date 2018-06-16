@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title align="center">Interfaces</title>
+		<title>Interfaces</title>
 	</head>
 		<body>
-			<h1> List of Interfaces </h1>
+			<h1 align="center"> List of Interfaces </h1>
 			<table border="1" align="center">
 				<tr>
 					<th> Network Name </th>
