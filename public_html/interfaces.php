@@ -75,7 +75,7 @@
 				echo "<td>" . $networkAddress . "</td>";
 				echo "<td>" . $deviceType . "</td>";
 				echo "<td>" . $openstackPortId . "</td>";
-				echo "<td>" . validatePrefix() . $prefix . "</td>";
+				echo "<td>" . validatePrefix($deviceType) . $prefix . "</td>";
 				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
 				echo "</tr>";
 
