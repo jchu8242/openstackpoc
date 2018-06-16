@@ -43,36 +43,6 @@
 
 				switch($deviceType) {
 					case "compute:nova":
-						$prefix = "qvo, qvb, tap";
-						break;
-					case "network:router_gateway":
-						$prefix = "qg";
-						break;
-					case "network:router_interface":
-						$prefix = "qr";
-						break;
-					case "network:dhcp":
-						$prefix = "tap";
-						break;
-				}
-
-			}
-
-
-		while ($row=mysqli_fetch_array($result)) {
-
-			//assigning variables to row values
-			$networkName=$row['name'];
-			$networkAddress=$row['cidr'];
-			$deviceType=$row['device_owner'];
-			$openstackPortId=$row['id'];
-			$LinuxDeviceNameSuffix=$row['LDN'];
-
-			//validate Linux Device Prefix
-			function validatePrefix($deviceType) {
-
-				switch($deviceType) {
-					case "compute:nova":
 						echo "qvo, qvb, tap";
 						break;
 					case "network:router_gateway":
@@ -87,6 +57,16 @@
 				}
 
 			}
+
+
+		while ($row=mysqli_fetch_array($result)) {
+
+			//assigning variables to row values
+			$networkName=$row['name'];
+			$networkAddress=$row['cidr'];
+			$deviceType=$row['device_owner'];
+			$openstackPortId=$row['id'];
+			$LinuxDeviceNameSuffix=$row['LDN'];
 
 				echo "<tr>";
 				echo "<td>" . $networkName . "</td>";
