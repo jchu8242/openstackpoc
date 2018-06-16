@@ -48,6 +48,14 @@
 			$openstackPortId=$row['id'];
 			$LinuxDeviceNameSuffix=$row['LDN'];
 
+				echo "<tr>";
+				echo "<td>" . $networkName . "</td>";
+				echo "<td>" . $networkAddress . "</td>";
+				echo "<td>" . $deviceType . "</td>";
+				echo "<td>" . $openstackPortId . "</td>";
+				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
+				echo "</tr>";
+
 			//validate Linux Device Prefix
 			function validatePrefix($deviceType) {
 				if ($deviceType == "compute:nova") {
@@ -60,14 +68,6 @@
 					print ("tap");
 				}
 			}
-
-				echo "<tr>";
-				echo "<td>" . $networkName . "</td>";
-				echo "<td>" . $networkAddress . "</td>";
-				echo "<td>" . $deviceType . "</td>";
-				echo "<td>" . $openstackPortId . "</td>";
-				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
-				echo "</tr>";
 		}
 		echo '</table>';
 
