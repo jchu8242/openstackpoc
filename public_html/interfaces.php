@@ -36,16 +36,16 @@
 			ON subnets.network_id=ports.network_id 
 			WHERE device_owner IN ("compute:nova", "network:dhcp", "network:router_interface", "network:router_gateway")
 			ORDER BY ports.device_owner');
+		
 
-		//assign result to array
-		$row=mysqli_fetch_array($result);
+		while ($row=mysqli_fetch_array($result)) {
+
 		$networkName=$row['name'];
 		$networkAddress=$row['cidr'];
 		$deviceType=$row['device_owner'];
 		$openstackPortId=$row['id'];
 		$LinuxDeviceNameSuffix=$row['LDN'];
 
-		while ($row=mysqli_fetch_array($result)) {
 			echo "<tr>";
 			echo "<td>" . $networkName . "</td>";
 			echo "<td>" . $networkAddress . "</td>";
