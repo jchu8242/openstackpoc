@@ -61,7 +61,7 @@
 				}
 			}
 
-			$prefix=validatePrefix();
+			$prefix=validatePrefix($deviceType);
 
 				echo "<tr>";
 				echo "<td>" . $networkName . "</td>";
