@@ -61,7 +61,7 @@
 				}
 			}
 
-			$prefix=validatePrefix;
+			$prefix=validatePrefix();
 
 				echo "<tr>";
 				echo "<td>" . $networkName . "</td>";
