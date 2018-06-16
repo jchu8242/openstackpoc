@@ -40,15 +40,22 @@
 
 			//validate Linux Device Prefix
 			function validatePrefix($deviceType) {
-				if ($deviceType == "compute:nova") {
-					$prefix="qvo, qvb, tap";
-				} elseif ($deviceType=="network:router_gateway") {
-					$prefix="qg";
-				} elseif ($deviceType=="network:router_interface") {
-					$prefix="qr";
-				} elseif ($deviceType=="network:dhcp") {
-					$prefix="tap";
+
+				switch($deviceType) {
+					case "compute:nova":
+						echo "qvo, qvb, tap";
+						continue;
+					case "network:router_gateway":
+						echo "qg";
+						continue;
+					case "network:router_interface":
+						echo "qr";
+						continue;
+					case "network:dhcp":
+						echo "tap";
+						continue;
 				}
+
 			}
 
 
