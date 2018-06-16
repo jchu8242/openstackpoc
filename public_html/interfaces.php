@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Interfaces</title>
+		<title align="center">Interfaces</title>
 	</head>
 		<body>
 			<h1> List of Interfaces </h1>
