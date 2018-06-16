@@ -4,6 +4,15 @@
   <title>Interfaces</title>
 </head>
 <body>
+	<table border="1">
+		<tr>
+			<th> Network Name <th>
+			<th> Network address <th>
+			<th> Device type <th>
+			<th> OpenStack port ID <th>
+			<th> Linux Device Name Suffix <th>
+		</tr>;
+
 	<?php
 		//declare server details
 		$host='192.168.1.24';
@@ -28,14 +37,6 @@
 			WHERE device_owner IN ("compute:nova", "network:dhcp", "network:router_interface", "network:router_gateway")
 			ORDER BY ports.device_owner');
 
-		echo '<table border"="1">
-			<tr>
-			<th> Network Name <th>
-			<th> Network address <th>
-			<th> Device type <th>
-			<th> OpenStack port ID <th>
-			<th> Linux Device Name Suffix <th>
-			</tr>';
 
 		while ($row = mysqli_fetch_array($result)) {
 			echo "<tr>";
