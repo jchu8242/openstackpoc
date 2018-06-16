@@ -88,9 +88,9 @@
 	<!--monitor compute instances-->	
 	<b1 align="center">
 		<h1> Compute Instances </h1>
-		<form>
+		<form align="left">
 			Linux Device Name prefix: <input type="text" name="prefix"><br>
-			Linux Device Name Suffix: <inpute type="text" name="suffix"><br>
+			Linux Device Name Suffix: <input type="text" name="suffix"><br>
 			<input type="submit" value="submit">
 		</form>
 	</b1><br><br>
@@ -98,9 +98,9 @@
 	<!--monitor Routers-->
 	<b2 align="center">
 		<h1> Routers </h1>
-			<form>
+			<form align="left">
 				Linux Device Name prefix: <input type="text" name="prefix"><br>
-				Linux Device Name Suffix: <inpute type="text" name="suffix"><br>
+				Linux Device Name Suffix: <input type="text" name="suffix"><br>
 				<input type="submit" value="submit">
 			</form>
 	</b2><br><br>
@@ -108,7 +108,7 @@
 	<!--monitor DHCP Agents-->
 	<b3 align="center">
 		<h1> DHCP AGENTS </h1>
-			<form>
+		<form align="left">
 			Linux Device Name prefix: <input type="text" name="prefix"><br>
 			Linux Device Name Suffix: <inpute type="text" name="suffix"><br>
 			<input type="submit" value="submit">
