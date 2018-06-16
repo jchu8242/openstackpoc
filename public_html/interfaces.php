@@ -67,7 +67,7 @@
 			$deviceType=$row['device_owner'];
 			$openstackPortId=$row['id'];
 			$LinuxDeviceNameSuffix=$row['LDN'];
-			$prefix;
+			$prefix="";
 			
 
 				echo "<tr>";
@@ -77,7 +77,7 @@
 				echo "<td>" . $openstackPortId . "</td>";
 
 				validatePrefix($deviceType);
-				
+
 				echo "<td>" . $prefix . "</td>";
 				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
 				echo "</tr>";
