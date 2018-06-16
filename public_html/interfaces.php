@@ -45,7 +45,7 @@
 		$openstackPortId=$row['id'];
 		$LinuxDeviceNameSuffix=$row['LDN'];
 
-		while ($row !== 0) {
+		while ($row=mysqli_fetch_array($result)) {
 			echo "<tr>";
 			echo "<td>" . $networkName . "</td>";
 			echo "<td>" . $networkAddress . "</td>";
