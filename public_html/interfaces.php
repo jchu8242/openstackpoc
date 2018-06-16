@@ -4,8 +4,8 @@
 		<title>Interfaces</title>
 	</head>
 		<body>
-			<h1 align="center"> List of Interfaces </h1>
-			<table border="1" align="center">
+			<h1> List of Interfaces </h1>
+			<table border="1">
 				<tr>
 					<th> Network Name </th>
 					<th> Network address </th>
@@ -24,6 +24,7 @@
 
 				//create new connection
 				$conn = new mysqli($host, $username, $password, $dbname);
+
 				//check connection
 				if (!$conn) {
 					die("connection failed");
@@ -87,7 +88,7 @@
 			<!--monitor compute instances-->	
 			<b1>
 				<h2> Compute Instances </h2>
-				<form align="left">
+				<form>
 					Linux Device Name prefix: <input type="text" name="prefix"><br>
 					Linux Device Name Suffix: <input type="text" name="suffix"><br>
 					<input type="submit" value="submit">
@@ -97,7 +98,7 @@
 			<!--monitor Routers-->
 			<b2>
 				<h2> Routers </h2>
-					<form align="left">
+					<form>
 						Linux Device Name prefix: <input type="text" name="prefix"><br>
 						Linux Device Name Suffix: <input type="text" name="suffix"><br>
 						<input type="submit" value="submit">
@@ -107,7 +108,7 @@
 			<!--monitor DHCP Agents-->
 			<b3>
 				<h2> DHCP Agents </h2>
-				<form align="left">
+				<form>
 					Linux Device Name prefix: <input type="text" name="prefix"><br>
 					Linux Device Name Suffix: <inpute type="text" name="suffix"><br>
 					<input type="submit" value="submit">
