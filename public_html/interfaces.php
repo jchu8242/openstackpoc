@@ -6,11 +6,11 @@
 <body>
 	<table border="1">
 		<tr>
-			<th> Network Name <th>
-			<th> Network address <th>
-			<th> Device type <th>
-			<th> OpenStack port ID <th>
-			<th> Linux Device Name Suffix <th>
+			<th> Network Name </th>
+			<th> Network address </th>
+			<th> Device type </th>
+			<th> OpenStack port ID </th>
+			<th> Linux Device Name Suffix </th>
 		</tr>;
 
 	<?php
