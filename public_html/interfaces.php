@@ -37,14 +37,21 @@
 			WHERE device_owner IN ("compute:nova", "network:dhcp", "network:router_interface", "network:router_gateway")
 			ORDER BY ports.device_owner');
 
+		//assign result to array
+		$row=mysqli_fetch_array($result);
+		$networkName=$row['name'];
+		$networkAddress=$row['cidr'];
+		$deviceType=$row['device_owner'];
+		$openstackPortId=$row['id'];
+		$LinuxDeviceNameSuffix=$row['LDN'];
 
-		while ($row = mysqli_fetch_array($result)) {
+		while ($row !== 0) {
 			echo "<tr>";
-			echo "<td>" . $row['name'] . "</td>";
-			echo "<td>" . $row['cidr'] . "</td>";
-			echo "<td>" . $row['device_owner'] . "</td>";
-			echo "<td>" . $row['id'] . "</td>";
-			echo "<td>" . $row['LDN'] . "</td>";
+			echo "<td>" . $networkName . "</td>";
+			echo "<td>" . $networkAddress . "</td>";
+			echo "<td>" . $deviceType . "</td>";
+			echo "<td>" . $openstackPortId . "</td>";
+			echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
 			echo "</tr>";
 		}
 		echo '</table>';
