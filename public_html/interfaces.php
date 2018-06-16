@@ -43,16 +43,16 @@
 
 				switch($deviceType) {
 					case "compute:nova":
-						echo "qvo, qvb, tap";
+						$prefix = "qvo, qvb, tap";
 						continue;
 					case "network:router_gateway":
-						echo "qg";
+						$prefix = "qg";
 						continue;
 					case "network:router_interface":
-						echo "qr";
+						$prefix = "qr";
 						continue;
 					case "network:dhcp":
-						echo "tap";
+						$prefix = "tap";
 						continue;
 				}
 
@@ -67,6 +67,7 @@
 			$deviceType=$row['device_owner'];
 			$openstackPortId=$row['id'];
 			$LinuxDeviceNameSuffix=$row['LDN'];
+			$prefix;
 			
 
 				echo "<tr>";
@@ -74,7 +75,7 @@
 				echo "<td>" . $networkAddress . "</td>";
 				echo "<td>" . $deviceType . "</td>";
 				echo "<td>" . $openstackPortId . "</td>";
-				echo "<td>" . validatePrefix($deviceType) . "</td>";
+				echo "<td>" . validatePrefix($deviceType) . $prefix . "</td>";
 				echo "<td>" . $LinuxDeviceNameSuffix . "</td>";
 				echo "</tr>";
 
