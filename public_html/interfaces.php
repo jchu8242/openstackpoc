@@ -12,7 +12,7 @@
 			<th> OpenStack port ID </th>
 			<th> Linux Device Name Prefix </th>
 			<th> Linux Device Name Suffix </th>
-		</tr>;
+		</tr>
 
 	<?php
 		//declare server details
