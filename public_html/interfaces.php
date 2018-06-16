@@ -42,18 +42,19 @@
 			function validatePrefix($deviceType) {
 
 				switch($deviceType) {
+					$prefix="";
 					case "compute:nova":
-						echo "qvo, qvb, tap";
-						break;
+						$prefix="qvo, qvb, tap";
+						return $prefix;
 					case "network:router_gateway":
-						echo "qg";
-						break;
+						$prefix="qg";
+						return $prefix;
 					case "network:router_interface":
-						echo "qr";
-						break;
+						$prefix="qr";
+						return $prefix;
 					case "network:dhcp":
-						echo "tap";
-						break;
+						$prefix="tap";
+						return $prefix;
 				}
 
 			}
