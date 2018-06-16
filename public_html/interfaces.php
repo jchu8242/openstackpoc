@@ -51,13 +51,13 @@
 			//validate Linux Device Prefix
 			function validatePrefix($deviceType) {
 				if ($deviceType == "compute:nova") {
-					echo "qvo, qvb. tap";
+					print ("qvo, qvb, tap");
 				} elseif ($deviceType=="network:router_gateway") {
-					echo "qg";
+					print ("qg");
 				} elseif ($deviceType=="network:router_interface") {
-					echo "qr";
+					print ("qr");
 				} elseif ($deviceType=="network:dhcp") {
-					echo "tap";
+					print ("tap");
 				}
 			}
 
