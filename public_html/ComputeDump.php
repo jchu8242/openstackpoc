@@ -18,23 +18,16 @@
 			$cmd="tcpdump ";
 			$finalcmd=$cmd . $prefix . $suffix;
 			
-			function SSH_func($ssh_command) {
-
-				$control_ip_add = '192.168.1.24';
-				$control_ssh_username = 'root';
-				$control_ssh_pw = 'root';
-	
-				$connection = ssh2_connect($control_ip_add, '2222');
-				ssh2_auth_password($connection, $control_ssh_username, $control_ssh_pw);
-				$stream = ssh2_exec($connection, $ssh_command);
-				stream_set_blocking($stream, true);
-				$stream_output = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
-				$ssh_output = stream_get_contents($stream_output);
-				return $ssh_output;
+			function ssh_func($user, $host, $password, $port){
+				$connection = ssh2_connect($host, $port);
+				if (ssh2_auth_password($connection, $user, $password)) {
+					echo "Authentication Successful!\n";
+				  } else {
+					die('Authentication Failed...');
+				  }
 			}
 
-			$ssh_command='ls -la';
-			SSH_func($ssh_command);
+			ssh_func($user, $host, $password, $port);
 
 			
 
