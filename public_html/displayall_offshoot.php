@@ -11,7 +11,7 @@
 		<?php
 
 		#Keystone - project/tenant query
-		$keystone_project = mysqli_connect("10.0.0.50", "mgemin", "root");
+		$keystone_project = mysqli_connect("192.168.1.24", "root", "root");
 		if (!$keystone_project)
 			die("Could not connect to server");
 		mysqli_select_db($keystone_project,"keystone");
@@ -19,35 +19,35 @@
 		$num_rows_result1 = mysqli_num_rows($result1);
 
 		#Neutron - networks query
-		$neutron_networks = mysqli_connect("10.0.0.50", "mgemin", "root");
+		$neutron_networks = mysqli_connect("192.168.1.24", "root", "root");
 		if (!$neutron_networks)
 			die("Could not connect to server");
 		mysqli_select_db($neutron_networks,"neutron");
 		$result2 = mysqli_query($neutron_networks,"select name,id,project_id from networks;");
 
 		#Neutron - subnets/cidr query
-		$neutron_subnets = mysqli_connect("10.0.0.50", "mgemin", "root");
+		$neutron_subnets = mysqli_connect("192.168.1.24", "root", "root");
 		if (!$neutron_networks)
 			die("Could not connect to server");
 		mysqli_select_db($neutron_networks,"neutron");
 		$result3 = mysqli_query($neutron_networks,"select network_id,cidr from subnets;");
 
 		#Neutron - ports query
-		$neutron_ports_ip = mysqli_connect("10.0.0.50", "mgemin", "root");
+		$neutron_ports_ip = mysqli_connect("192.168.1.24", "root", "root");
 		if (!$neutron_ports_ip)
 			die("Could not connect to server");
 		mysqli_select_db($neutron_ports_ip,"neutron");
 		$result4 = mysqli_query($neutron_ports_ip,"select ports.id,ports.network_id,ports.device_owner,ports.device_id, ipallocations.ip_address from ports inner join ipallocations on ports.id=ipallocations.port_id");
 
 		#Neutron - routers query
-		$neutron_routers = mysqli_connect("10.0.0.50", "mgemin", "root");
+		$neutron_routers = mysqli_connect("192.168.1.24", "root", "root");
 		if (!$neutron_routers)
 			die("Could not connect to server");
 		mysqli_select_db($neutron_routers,"neutron");
 		$result5 = mysqli_query($neutron_routers,"select id,name from routers;");
 
 		#Nova - instances query
-		$nova_instances = mysqli_connect("10.0.0.50", "mgemin", "root");
+		$nova_instances = mysqli_connect("192.168.1.24", "root", "root");
 		if (!$nova_instances)
 			die("Could not connect to server");
 		mysqli_select_db($nova_instances,"nova");
@@ -56,7 +56,7 @@
 
 		function SSH_func($ssh_command) {
 
-			$control_ip_add = '10.0.0.50';
+			$control_ip_add = '192.168.1.24';
 			$control_ssh_username = 'root';
 			$control_ssh_pw = 'root';
 
