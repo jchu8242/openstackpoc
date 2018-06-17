@@ -21,7 +21,6 @@
 				$username='root';
 				$password='root';
 				$dbname='neutron';
-
 				//create new connection
 				$conn = new mysqli($host, $username, $password, $dbname);
 
